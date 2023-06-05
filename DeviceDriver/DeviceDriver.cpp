@@ -10,8 +10,8 @@ int DeviceDriver::read(long address)
 	for (int nReadCount = 2 ; nReadCount <= VALID_READ_RETRY_COUNT ; nReadCount++)
     {
         Sleep(INTERVAL_READ);
-        int nextReadValue = m_hardware->read(address);
-        if (nextReadValue != nReadValue) throw std::exception("Exception");
+        int nNextReadValue = m_hardware->read(address);
+        if (nNextReadValue != nReadValue) throw std::exception("Exception");
     }
     return nReadValue;
 }
